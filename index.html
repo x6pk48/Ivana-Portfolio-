@@ -443,6 +443,10 @@
             background: linear-gradient(45deg, #ff6584, #ff9a3d);
         }
         
+        .project-img.quick-quiz {
+            background: linear-gradient(45deg, #36d1dc, #5b86e5);
+        }
+        
         .project-img .overlay {
             position: absolute;
             top: 0;
@@ -503,15 +507,8 @@
             background-color: var(--primary-dark);
         }
         
-        .project-link.outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .project-link.outline:hover {
-            background-color: var(--primary);
-            color: white;
+        .project-link.full-width {
+            width: 100%;
         }
         
         /* Project Viewer Modal */
@@ -669,29 +666,34 @@
             margin-bottom: 2rem;
         }
         
-        .social-links {
+        .contact-details {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             gap: 1.5rem;
             margin-top: 2rem;
         }
         
-        .social-link {
-            display: inline-flex;
+        .contact-item {
+            display: flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
+            gap: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .contact-item i {
+            color: var(--secondary);
             font-size: 1.3rem;
+        }
+        
+        .contact-link {
+            color: white;
+            text-decoration: none;
             transition: var(--transition);
         }
         
-        .social-link:hover {
-            background-color: var(--primary);
-            transform: translateY(-5px);
+        .contact-link:hover {
+            color: var(--secondary);
         }
         
         /* Footer */
@@ -819,6 +821,11 @@
             
             .education-container, .skills-container {
                 grid-template-columns: 1fr;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
@@ -1014,7 +1021,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Projects Showcase</h2>
-                <p>A selection of my key web development and AI projects</p>
+                <p>A selection of my key web development and AI projects. Click to view them embedded within this site.</p>
             </div>
             
             <div class="projects-grid">
@@ -1037,11 +1044,8 @@
                         </div>
                         
                         <div class="project-links">
-                            <a href="#" class="project-link view-project" data-project-url="https://s2205705.github.io/registration-system-v2/" data-project-title="Event Registration System">
+                            <a href="#" class="project-link view-project full-width" data-project-url="https://s2205705.github.io/registration-system-v2/" data-project-title="Event Registration System">
                                 <i class="fas fa-play-circle"></i> View Project
-                            </a>
-                            <a href="https://s2205705.github.io/registration-system-v2/" target="_blank" class="project-link outline">
-                                <i class="fas fa-external-link-alt"></i> Open Directly
                             </a>
                         </div>
                     </div>
@@ -1066,11 +1070,34 @@
                         </div>
                         
                         <div class="project-links">
-                            <a href="#" class="project-link view-project" data-project-url="https://s2205705.github.io/Athena-Ai/" data-project-title="Athena AI Study Assistant">
+                            <a href="#" class="project-link view-project full-width" data-project-url="https://s2205705.github.io/Athena-Ai/" data-project-title="Athena AI Study Assistant">
                                 <i class="fas fa-play-circle"></i> View Project
                             </a>
-                            <a href="https://s2205705.github.io/Athena-Ai/" target="_blank" class="project-link outline">
-                                <i class="fas fa-external-link-alt"></i> Open Directly
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Quiz -->
+                <div class="project-card">
+                    <div class="project-img quick-quiz">
+                        <div class="overlay">
+                            <i class="fas fa-external-link-alt fa-3x" style="color: white;"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Quick Quiz Application</h3>
+                        <p>An interactive quiz application with multiple question formats, timer functionality, and score tracking. Perfect for educational purposes and knowledge testing.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Interactive UI</span>
+                            <span class="tech-tag">Quiz Logic</span>
+                            <span class="tech-tag">Score Tracking</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#" class="project-link view-project full-width" data-project-url="https://webdeveloper2552.github.io/Quick-Quiz-/" data-project-title="Quick Quiz Application">
+                                <i class="fas fa-play-circle"></i> View Project
                             </a>
                         </div>
                     </div>
@@ -1093,7 +1120,7 @@
                     <i class="fas fa-spinner fa-spin fa-2x"></i>
                     <p>Loading project...</p>
                 </div>
-                <iframe class="modal-iframe" id="projectIframe" src="" frameborder="0"></iframe>
+                <iframe class="modal-iframe" id="projectIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -1195,13 +1222,17 @@
             
             <div class="contact-info">
                 <p>I'm always open to discussing new opportunities, collaborations, or just chatting about technology and data science. Feel free to reach out!</p>
-                <a href="mailto:example@email.com" class="btn">Send Me An Email</a>
+                <a href="mailto:ivana.d.zaykova@gmail.com" class="btn">Send Me An Email</a>
                 
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-codepen"></i></a>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:ivana.d.zaykova@gmail.com" class="contact-link">ivana.d.zaykova@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/ivana-zaykova-925945329?originalSubdomain=uk" target="_blank" class="contact-link">LinkedIn Profile</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1210,7 +1241,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Ivana. All Rights Reserved.</p>
+            <p>&copy; 2025 Ivana Zaykova. All Rights Reserved.</p>
             <p>This portfolio showcases my CV and professional experience.</p>
         </div>
     </footer>
@@ -1340,6 +1371,11 @@
                 // Hide loading indicator when iframe loads
                 projectIframe.onload = function() {
                     loadingIndicator.style.display = 'none';
+                };
+                
+                // Handle iframe errors
+                projectIframe.onerror = function() {
+                    loadingIndicator.innerHTML = '<i class="fas fa-exclamation-triangle fa-2x"></i><p>Failed to load project. The project may not support embedding.</p>';
                 };
             });
         });
